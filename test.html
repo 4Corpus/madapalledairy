@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inquiry</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            background-color: white;
+            width: 200px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #25D366; /* WhatsApp color */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Our Products</h1>
+
+    <div class="product">
+        <img src="assets/milk.jpg" alt="Milk">
+        <h3>Milk</h3>
+        <button onclick="sendMessage('Milk', 'https://madanapaledairy.com/milk')">Inquire About Milk</button>
+    </div>
+
+    <div class="product">
+        <img src="assets/ghee.jpg" alt="Ghee">
+        <h3>Ghee</h3>
+        <button onclick="sendMessage('Ghee', 'https://madanapaledairy.com/ghee')">Inquire About Ghee</button>
+    </div>
+
+    <div class="product">
+        <img src="assets/curd.jpg" alt="Curd">
+        <h3>Curd</h3>
+        <button onclick="sendMessage('Curd', 'https://madanapaledairy.com/curd')">Inquire About Curd</button>
+    </div>
+
+    <script>
+        function sendMessage(productName, productLink) {
+            const phoneNumber = '7989564301'; // Your number
+            const message = encodeURIComponent(`Hello! I want to know more about ${productName}. Here is the link: ${productLink}`);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+
+</body>
+</html>
